@@ -1,0 +1,40 @@
+.container {
+    position: absolute;
+    top: 51%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.sign_Up_Box{
+    margin: auto;
+    height: 585px;
+    width: 45%;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.sign_Up_Body{
+    margin: auto;
+    width: 90%;
+}
+
+.sign_Up_Body h2{
+    padding-top: 50px;
+}
+
+input.form-fixer {
+    padding: 10px;
+    font-size: 18px;
+    height: 45px;
+}
+
+/* .form-horizontal .form-group input, 
+.form-horizontal .form-group select,
+.form-horizontal .form-group label
+ { 
+    height: 14px;
+    line-height: 14px;
+} */
+
