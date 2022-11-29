@@ -1,7 +1,9 @@
 const user = require('../Model/user')
 const bycrpt = require('bcrypt')
 const Sequelize = require('sequelize')
+const JWT = require('jsonwebtoken')
 const Op = Sequelize.Op
+const dummyToken = 'lkefhltfyowfgdf'
 
 exports.postSign= async(req, res)=>{
  
@@ -37,9 +39,29 @@ exports.postSign= async(req, res)=>{
     res.json({flag:false});
   }
   
- 
-  // tableName.create()
-  // 
+}
 
+exports.postLogin = async (req, res) => {
+  let email = req.body.email;
+  let pass = req.body.pass;
+  let userData = await user.findAll({where : { email : email }});
+  console.log(userData[0].name);
+  if(userData.length > 0){
+    let username = userData[0].name;
+    let hashpassword = userData[0].password;
+    let id = userData[0].id;
+    let email = userData[0].email;
+    let match = await bycrpt.compare(pass, hashpassword);
+    if(match){
+      let token = JWT.sign(id, dummyToken);
+      res.send({name:username, email:email, token:token}); 
+    }
+    else{
+       console.log('Password does not match');
+    }
+  }
+  else{
+   console.log("Email doesn't exists")
+  }
 }
 

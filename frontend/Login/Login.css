@@ -7,20 +7,20 @@
     transform: translateX(-50%) translateY(-50%);
 }
 
-.sign_Up_Box{
+.login_Box{
     margin: auto;
-    height: 585px;
+    height: 385px;
     width: 40%;
     border-radius: 15px;
     background-color: white;
 }
 
-.sign_Up_Body{
+.login_Body{
     margin: auto;
     width: 90%;
 }
 
-.sign_Up_Body h2{
+.login_Body h2{
     padding-top: 50px;
 }
 

@@ -16,7 +16,7 @@ regButton.addEventListener('click',(e)=>{
     }
     console.log(obj);
     axios.post('http://localhost:3000/signup',obj).then(res=>{
-        console.log(res.data  );
+        console.log(res.data);
        showAlert(res.data.flag)
     })
 })
